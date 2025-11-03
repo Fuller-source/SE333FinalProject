@@ -423,7 +423,7 @@ public class DateUtils {
 
     //-----------------------------------------------------------------------
     /**
-     * Adds a number of years to a date returning a new object.
+     * Adds a number of years to a date returning a new object. 
      * The original {@code Date} is unchanged.
      *
      * @param date  the date, not null
@@ -1317,6 +1317,14 @@ public class DateUtils {
     public static long getFragmentInMilliseconds(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.MILLISECOND);    
     }
+
+    /**
+     * Calendar overload for getFragmentInMilliseconds.
+     * @since 3.0
+     */
+    public static long getFragmentInMilliseconds(final Calendar calendar, final int fragment) {
+        return getFragment(calendar, fragment, Calendar.MILLISECOND);
+    }
     
     /**
      * <p>Returns the number of seconds within the 
@@ -1359,6 +1367,14 @@ public class DateUtils {
     }
 
     /**
+     * Calendar overload for getFragmentInSeconds.
+     * @since 3.0
+     */
+    public static long getFragmentInSeconds(final Calendar calendar, final int fragment) {
+        return getFragment(calendar, fragment, Calendar.SECOND);
+    }
+
+    /**
      * <p>Returns the number of minutes within the 
      * fragment. All datefields greater than the fragment will be ignored.</p> 
      * 
@@ -1395,6 +1411,14 @@ public class DateUtils {
      */
     public static long getFragmentInMinutes(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.MINUTE);
+    }
+
+    /**
+     * Calendar overload for getFragmentInMinutes.
+     * @since 3.0
+     */
+    public static long getFragmentInMinutes(final Calendar calendar, final int fragment) {
+        return getFragment(calendar, fragment, Calendar.MINUTE);
     }
     
     /**
@@ -1435,6 +1459,14 @@ public class DateUtils {
      */
     public static long getFragmentInHours(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.HOUR_OF_DAY);
+    }
+
+    /**
+     * Calendar overload for getFragmentInHours.
+     * @since 3.0
+     */
+    public static long getFragmentInHours(final Calendar calendar, final int fragment) {
+        return getFragment(calendar, fragment, Calendar.HOUR_OF_DAY);
     }
     
     /**
@@ -1477,6 +1509,14 @@ public class DateUtils {
      */
     public static long getFragmentInDays(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.DAY_OF_YEAR);
+    }
+
+    /**
+     * Calendar overload for getFragmentInDays.
+     * @since 3.0
+     */
+    public static long getFragmentInDays(final Calendar calendar, final int fragment) {
+        return getFragment(calendar, fragment, Calendar.DAY_OF_YEAR);
     }
     
     /**
