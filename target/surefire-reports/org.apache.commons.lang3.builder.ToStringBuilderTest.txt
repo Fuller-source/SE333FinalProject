@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: org.apache.commons.lang3.builder.ToStringBuilderTest
 -------------------------------------------------------------------------------
-Tests run: 79, Failures: 31, Errors: 5, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! - in org.apache.commons.lang3.builder.ToStringBuilderTest
+Tests run: 79, Failures: 31, Errors: 5, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! - in org.apache.commons.lang3.builder.ToStringBuilderTest
 test_setUpToClass_valid(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.reflect.InaccessibleObjectException: Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not "opens java.lang" to unnamed module @4226ff9b
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_valid(ToStringBuilderTest.java:1012)
@@ -25,7 +25,7 @@ java.lang.AssertionError: Expected null, actual: {true=null} expected null, but 
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
 
-testObjectBuild(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
+testObjectBuild(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
@@ -40,7 +40,7 @@ java.lang.AssertionError: Expected null, actual: {true=null} expected null, but 
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
 
-testSelfInstanceTwoVarsReflectionObjectCycle(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
+testSelfInstanceTwoVarsReflectionObjectCycle(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
@@ -60,7 +60,7 @@ java.lang.AssertionError: Expected null, actual: {true=null} expected null, but 
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
 
-testFloatArray(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
+testFloatArray(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
@@ -75,7 +75,7 @@ java.lang.AssertionError: Expected null, actual: {true=null} expected null, but 
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
 
-testReflectionArrayCycle(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
+testReflectionArrayCycle(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
@@ -130,11 +130,11 @@ java.lang.AssertionError: Expected null, actual: {true=null} expected null, but 
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
 
-test_setUpToClass_invalid(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< ERROR!
+test_setUpToClass_invalid(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.reflect.InaccessibleObjectException>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_invalid(ToStringBuilderTest.java:1025)
 
-test_setUpToClass_invalid(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
+test_setUpToClass_invalid(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {true=null, 5=null} expected null, but was:<{true=null, 5=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
@@ -153,7 +153,7 @@ testReflectionInteger(org.apache.commons.lang3.builder.ToStringBuilderTest)  Tim
 java.lang.reflect.InaccessibleObjectException: Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not "opens java.lang" to unnamed module @4226ff9b
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionInteger(ToStringBuilderTest.java:95)
 
-testReflectionInteger(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0.001 s  <<< FAILURE!
+testReflectionInteger(org.apache.commons.lang3.builder.ToStringBuilderTest)  Time elapsed: 0 s  <<< FAILURE!
 java.lang.AssertionError: Expected null, actual: {5=null} expected null, but was:<{5=null}>
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
 	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)

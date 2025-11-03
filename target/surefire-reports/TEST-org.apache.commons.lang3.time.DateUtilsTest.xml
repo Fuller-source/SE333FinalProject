@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.time.DateUtilsTest" time="0.013" tests="38" errors="5" skipped="0" failures="12">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.time.DateUtilsTest" time="0.008" tests="38" errors="5" skipped="0" failures="12">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter5793891422424509909.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T13-53-19_814-jvmRun1 surefire15761548695676770734tmp surefire_04345644664108869644tmp"/>
+    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter13996336819754252026.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T13-58-54_201-jvmRun1 surefire7615276044270481335tmp surefire_010811558857942428709tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/james/Downloads/codebase/target/test-classes:/Users/james/Downloads/codebase/target/classes:/Users/james/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/james/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/james/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/james/.m2/repository/org/easymock/easymock/3.1/easymock-3.1.jar:/Users/james/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/james/.m2/repository/org/objenesis/objenesis/1.2/objenesis-1.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter5793891422424509909.jar"/>
+    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter13996336819754252026.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.2"/>
@@ -58,18 +58,18 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testParseDateWithLeniency" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testParseDateWithLeniency" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddMinutes" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testMonthIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
-  <testcase name="testRoundLang346" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testRoundLang346" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testLANG799_DE_OK" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <error message="Unable to parse the date: Mi, 09 Apr 2008 23:55:38 GMT" type="java.text.ParseException">java.text.ParseException: Unable to parse the date: Mi, 09 Apr 2008 23:55:38 GMT
 	at org.apache.commons.lang3.time.DateUtilsTest.testLANG799_DE_OK(DateUtilsTest.java:1598)
 </error>
   </testcase>
   <testcase name="testLANG799_EN_OK" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testSetMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testTruncate" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.002"/>
+  <testcase name="testSetMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testTruncate" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testIsSameLocalTime_Cal" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddDays" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testLANG799_EN_WITH_DE_LOCALE" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
@@ -77,7 +77,7 @@
 	at org.apache.commons.lang3.time.DateUtilsTest.testLANG799_EN_WITH_DE_LOCALE(DateUtilsTest.java:1623)
 </error>
   </testcase>
-  <testcase name="testRound" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.002">
+  <testcase name="testRound" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001">
     <error message="Cannot invoke &quot;org.apache.commons.lang3.JavaVersion.atLeast(org.apache.commons.lang3.JavaVersion)&quot; because &quot;org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_VERSION_AS_ENUM&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "org.apache.commons.lang3.JavaVersion.atLeast(org.apache.commons.lang3.JavaVersion)" because "org.apache.commons.lang3.SystemUtils.JAVA_SPECIFICATION_VERSION_AS_ENUM" is null
 	at org.apache.commons.lang3.time.DateUtilsTest.testRound(DateUtilsTest.java:848)
 </error>
@@ -101,7 +101,7 @@
 	at org.apache.commons.lang3.time.DateUtilsTest.testSetMinutes(DateUtilsTest.java:565)
 ]]></failure>
   </testcase>
-  <testcase name="testToCalendar" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testToCalendar" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddHours" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;11&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<11>
 	at org.apache.commons.lang3.time.DateUtilsTest.assertDate(DateUtilsTest.java:632)
@@ -126,7 +126,7 @@
 </error>
   </testcase>
   <testcase name="testIsSameInstant_Date" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testLang530" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testLang530" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testSetSeconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;11&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<11>
 	at org.apache.commons.lang3.time.DateUtilsTest.assertDate(DateUtilsTest.java:632)
@@ -140,7 +140,7 @@
 	at org.apache.commons.lang3.time.DateUtilsTest.testAddMonths(DateUtilsTest.java:339)
 ]]></failure>
   </testcase>
-  <testcase name="testWeekIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.002"/>
+  <testcase name="testWeekIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testSetMonths" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;11&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<11>
 	at org.apache.commons.lang3.time.DateUtilsTest.assertDate(DateUtilsTest.java:632)
@@ -156,7 +156,7 @@
   <testcase name="testIsSameDay_Date" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testIsSameDay_Cal" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testIteratorEx" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testAddMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001">
+  <testcase name="testAddMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;11&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<11>
 	at org.apache.commons.lang3.time.DateUtilsTest.assertDate(DateUtilsTest.java:632)
 	at org.apache.commons.lang3.time.DateUtilsTest.testAddMilliseconds(DateUtilsTest.java:459)
