@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.009" tests="44" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.013" tests="44" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter3765009306857012780.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T11-15-28_791-jvmRun1 surefire346565817742163386tmp surefire_0639342027662818445tmp"/>
+    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter5793891422424509909.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T13-53-19_814-jvmRun1 surefire15761548695676770734tmp surefire_04345644664108869644tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/james/Downloads/codebase/target/test-classes:/Users/james/Downloads/codebase/target/classes:/Users/james/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/james/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/james/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/james/.m2/repository/org/easymock/easymock/3.1/easymock-3.1.jar:/Users/james/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/james/.m2/repository/org/objenesis/objenesis/1.2/objenesis-1.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter3765009306857012780.jar"/>
+    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter5793891422424509909.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.2"/>
@@ -58,35 +58,35 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testReadStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
-  <testcase name="testGetAllFieldsList" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001">
+  <testcase name="testReadStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testGetAllFieldsList" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.002">
     <failure message="expected:&lt;5&gt; but was:&lt;7&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<7>
 	at org.apache.commons.lang3.reflect.FieldUtilsTest.testGetAllFieldsList(FieldUtilsTest.java:167)
 ]]></failure>
   </testcase>
-  <testcase name="testReadDeclaredNamedField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
+  <testcase name="testReadDeclaredNamedField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.003"/>
   <testcase name="testReadNamedStaticField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testReadDeclaredNamedStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testReadDeclaredNamedFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testGetField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testGetFieldIllegalArgumentException1" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testGetFieldIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testGetFieldIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testReadDeclaredNamedStaticField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testWriteField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
-  <testcase name="testWriteNamedStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testWriteField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testWriteNamedStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testGetDeclaredFieldForceAccessIllegalArgumentException1" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testGetDeclaredFieldForceAccessIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testAmbig" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testReadStaticFieldForceAccessIllegalArgumentException1" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testReadStaticFieldForceAccessIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.002"/>
+  <testcase name="testReadStaticFieldForceAccessIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testWriteNamedField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteDeclaredNamedFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteDeclaredNamedStaticField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testReadNamedField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
+  <testcase name="testReadNamedField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testReadStaticFieldIllegalArgumentException1" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testReadStaticFieldIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testGetFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testGetFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testReadField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteNamedStaticField" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
@@ -94,7 +94,7 @@
   <testcase name="testGetFieldForceAccessIllegalArgumentException1" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testGetFieldForceAccessIllegalArgumentException2" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
   <testcase name="testWriteNamedFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
-  <testcase name="testReadNamedStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0"/>
+  <testcase name="testReadNamedStaticFieldForceAccess" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0.001"/>
   <testcase name="testGetAllFields" classname="org.apache.commons.lang3.reflect.FieldUtilsTest" time="0">
     <failure message="expected:&lt;5&gt; but was:&lt;7&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<7>
 	at org.apache.commons.lang3.reflect.FieldUtilsTest.testGetAllFields(FieldUtilsTest.java:147)
