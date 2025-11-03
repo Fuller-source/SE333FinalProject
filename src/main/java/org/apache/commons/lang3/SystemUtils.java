@@ -116,7 +116,7 @@ public class SystemUtils {
      * The file separator is:
      * <ul>
      * <li>{@code "/"}</code> on UNIX</li>
-     * <li>{@code "\"}</code> on Windows.</li>
+     * <li>{@code "\\"}</code> on Windows.</li>
      * </ul>
      * </p>
      * <p>
@@ -444,7 +444,64 @@ public class SystemUtils {
      * @since Java 1.3
      */
     public static final String JAVA_SPECIFICATION_VERSION = getSystemProperty("java.specification.version");
-    private static final JavaVersion JAVA_SPECIFICATION_VERSION_AS_ENUM = JavaVersion.get(JAVA_SPECIFICATION_VERSION);
+
+    /*
+     * Initialize a JavaVersion enum value for the specification version. Older Java versions report values like
+     * "1.8" while newer Java versions report values like "9", "11", etc. JavaVersion.get(...) returns null for
+     * unknown formats, which previously caused a NullPointerException. The static initializer below attempts several
+     * fallbacks to map common version formats to an existing JavaVersion constant and provides a safe default.
+     */
+    private static final JavaVersion JAVA_SPECIFICATION_VERSION_AS_ENUM;
+    static {
+        JavaVersion version = JavaVersion.get(JAVA_SPECIFICATION_VERSION);
+        if (version == null && JAVA_SPECIFICATION_VERSION != null) {
+            final String s = JAVA_SPECIFICATION_VERSION;
+            try {
+                if (s.startsWith("1.")) {
+                    final String minorPart = s.substring(2).split("\\.")[0];
+                    final int minor = Integer.parseInt(minorPart);
+                    switch (minor) {
+                        case 1: version = JavaVersion.JAVA_1_1; break;
+                        case 2: version = JavaVersion.JAVA_1_2; break;
+                        case 3: version = JavaVersion.JAVA_1_3; break;
+                        case 4: version = JavaVersion.JAVA_1_4; break;
+                        case 5: version = JavaVersion.JAVA_1_5; break;
+                        case 6: version = JavaVersion.JAVA_1_6; break;
+                        case 7: version = JavaVersion.JAVA_1_7; break;
+                        case 8: version = JavaVersion.JAVA_1_8; break;
+                        default: break;
+                    }
+                } else {
+                    final int major = Integer.parseInt(s.split("\\.")[0]);
+                    if (major >= 8) {
+                        // Treat Java 9+ as at least 1.8 for the purposes of comparisons in this library.
+                        version = JavaVersion.JAVA_1_8;
+                    } else if (major == 7) {
+                        version = JavaVersion.JAVA_1_7;
+                    } else if (major == 6) {
+                        version = JavaVersion.JAVA_1_6;
+                    } else if (major == 5) {
+                        version = JavaVersion.JAVA_1_5;
+                    } else if (major == 4) {
+                        version = JavaVersion.JAVA_1_4;
+                    } else if (major == 3) {
+                        version = JavaVersion.JAVA_1_3;
+                    } else if (major == 2) {
+                        version = JavaVersion.JAVA_1_2;
+                    } else if (major == 1) {
+                        version = JavaVersion.JAVA_1_1;
+                    }
+                }
+            } catch (final Exception ex) {
+                // Ignore and fall through to default below
+            }
+        }
+        if (version == null) {
+            // Safe fallback for modern JVMs: treat unknown/unsupported version strings as at least 1.8
+            version = JavaVersion.JAVA_1_8;
+        }
+        JAVA_SPECIFICATION_VERSION_AS_ENUM = version;
+    }
 
     /**
      * <p>
