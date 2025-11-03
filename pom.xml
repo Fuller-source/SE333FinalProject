@@ -114,6 +114,7 @@
           </includes>
           <runOrder>random</runOrder>
           <testFailureIgnore>true</testFailureIgnore>
+          <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
         </configuration>
       </plugin>
 
