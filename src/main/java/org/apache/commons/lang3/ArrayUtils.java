@@ -42,6 +42,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
  * @version $Id$
  */
 public class ArrayUtils {
+    int z = 0;
 
     /**
      * An empty immutable {@code Object} array.
