@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.apache.commons.lang3.time.DateUtilsTest
 -------------------------------------------------------------------------------
-Tests run: 38, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! - in org.apache.commons.lang3.time.DateUtilsTest
-testTruncateLang59(org.apache.commons.lang3.time.DateUtilsTest)  Time elapsed: 0.003 s  <<< FAILURE!
+Tests run: 38, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in org.apache.commons.lang3.time.DateUtilsTest
+testTruncateLang59(org.apache.commons.lang3.time.DateUtilsTest)  Time elapsed: 0.002 s  <<< FAILURE!
 org.junit.ComparisonFailure: Check 01:02:03.000 expected:<2004-10-31 01:02:0[3].000 MDT> but was:<2004-10-31 01:02:0[0].000 MDT>
 	at org.apache.commons.lang3.time.DateUtilsTest.testTruncateLang59(DateUtilsTest.java:1158)
 

@@ -115,7 +115,7 @@
           </includes>
           <runOrder>random</runOrder>
           <testFailureIgnore>true</testFailureIgnore>
-          <argLine>${argLine}</argLine>
+          <argLine>${jacoco.argLine} ${argLine}</argLine>
         </configuration>
       </plugin>
 
@@ -163,12 +163,12 @@
               <includes>
                 <include>org/apache/commons/lang3/**</include>
               </includes>
-              <propertyName>argLine</propertyName>
+              <propertyName>jacoco.argLine</propertyName>
             </configuration>
           </execution>
           <execution>
             <id>report</id>
-            <phase>test</phase>
+            <phase>verify</phase>
             <goals>
               <goal>report</goal>
             </goals>

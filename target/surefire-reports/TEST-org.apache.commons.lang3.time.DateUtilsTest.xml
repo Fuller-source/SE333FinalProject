@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.time.DateUtilsTest" time="0.014" tests="38" errors="0" skipped="0" failures="8">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.time.DateUtilsTest" time="0.009" tests="38" errors="0" skipped="0" failures="8">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter2825182794606709590.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T15-17-47_387-jvmRun1 surefire6896277276091220048tmp surefire_02812876939117720812tmp"/>
+    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter13804711757837820320.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T15-30-56_448-jvmRun1 surefire12234101757270477031tmp surefire_01894781942787370416tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/james/Downloads/codebase/target/test-classes:/Users/james/Downloads/codebase/target/classes:/Users/james/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/james/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/james/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/james/.m2/repository/org/easymock/easymock/3.1/easymock-3.1.jar:/Users/james/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/james/.m2/repository/org/objenesis/objenesis/1.2/objenesis-1.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter2825182794606709590.jar"/>
+    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter13804711757837820320.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.2"/>
@@ -63,23 +63,23 @@
   <testcase name="testMonthIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testRoundLang346" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testLANG799_DE_OK" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testLANG799_EN_OK" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testLANG799_EN_OK" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testSetMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testTruncate" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testIsSameLocalTime_Cal" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testAddDays" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testLANG799_EN_WITH_DE_LOCALE" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testRound" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
-  <testcase name="testParseDate" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testParseDate" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testCeil" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
   <testcase name="testAddSeconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testLANG799_EN_FAIL" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testSetMinutes" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testToCalendar" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testToCalendar" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddHours" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddWeeks" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddYears" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testTruncateLang59" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.003">
+  <testcase name="testTruncateLang59" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.002">
     <failure message="Check 01:02:03.000 expected:&lt;2004-10-31 01:02:0[3].000 MDT&gt; but was:&lt;2004-10-31 01:02:0[0].000 MDT&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: Check 01:02:03.000 expected:<2004-10-31 01:02:0[3].000 MDT> but was:<2004-10-31 01:02:0[0].000 MDT>
 	at org.apache.commons.lang3.time.DateUtilsTest.testTruncateLang59(DateUtilsTest.java:1158)
 ]]></failure>
@@ -99,7 +99,7 @@
 	at org.apache.commons.lang3.time.DateUtilsTest.testAddMonths(DateUtilsTest.java:339)
 ]]></failure>
   </testcase>
-  <testcase name="testWeekIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testWeekIterator" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.002"/>
   <testcase name="testSetMonths" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;3&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<3>
 	at org.apache.commons.lang3.time.DateUtilsTest.assertDate(DateUtilsTest.java:632)
@@ -113,7 +113,7 @@
 ]]></failure>
   </testcase>
   <testcase name="testIsSameDay_Date" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
-  <testcase name="testIsSameDay_Cal" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testIsSameDay_Cal" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testIteratorEx" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
   <testcase name="testAddMilliseconds" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0">
     <failure message="expected:&lt;4&gt; but was:&lt;3&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<3>
@@ -134,5 +134,5 @@
 	at org.apache.commons.lang3.time.DateUtilsTest.testSetYears(DateUtilsTest.java:479)
 ]]></failure>
   </testcase>
-  <testcase name="testLANG799_DE_FAIL" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0.001"/>
+  <testcase name="testLANG799_DE_FAIL" classname="org.apache.commons.lang3.time.DateUtilsTest" time="0"/>
 </testsuite>
