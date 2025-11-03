@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.011" tests="79" errors="5" skipped="0" failures="31">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.01" tests="74" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter9646166357075988845.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T14-19-13_964-jvmRun1 surefire14000562046947120295tmp surefire_01688698942267923990tmp"/>
+    <property name="sun.java.command" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter9588165578539404237.jar /Users/james/Downloads/codebase/target/surefire 2025-11-03T14-25-33_655-jvmRun1 surefire12942228316952639816tmp surefire_06838147836229952053tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/james/Downloads/codebase/target/test-classes:/Users/james/Downloads/codebase/target/classes:/Users/james/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/james/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/james/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/james/.m2/repository/org/easymock/easymock/3.1/easymock-3.1.jar:/Users/james/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar:/Users/james/.m2/repository/org/objenesis/objenesis/1.2/objenesis-1.2.jar:"/>
@@ -24,12 +24,12 @@
     <property name="java.home" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/Users/james/Downloads/codebase"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter9646166357075988845.jar"/>
+    <property name="surefire.real.class.path" value="/Users/james/Downloads/codebase/target/surefire/surefirebooter9588165578539404237.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="24.0.2"/>
@@ -58,206 +58,46 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="test_setUpToClass_valid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.002">
-    <error message="Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @72ba8a5e" type="java.lang.reflect.InaccessibleObjectException">java.lang.reflect.InaccessibleObjectException: Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not "opens java.lang" to unnamed module @72ba8a5e
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_valid(ToStringBuilderTest.java:1012)
-</error>
-  </testcase>
-  <testcase name="test_setUpToClass_valid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.003">
-    <failure message="Expected null, actual: {5=null} expected null, but was:&lt;{5=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {5=null} expected null, but was:<{5=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
+  <testcase name="test_setUpToClass_valid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
   <testcase name="testCharArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionHierarchyArrayList" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionNull" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testDoubleArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testReflectionBoolean" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <error message="Unable to make field private final boolean java.lang.Boolean.value accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @72ba8a5e" type="java.lang.reflect.InaccessibleObjectException">java.lang.reflect.InaccessibleObjectException: Unable to make field private final boolean java.lang.Boolean.value accessible: module java.base does not "opens java.lang" to unnamed module @72ba8a5e
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionBoolean(ToStringBuilderTest.java:114)
-</error>
-  </testcase>
-  <testcase name="testReflectionBoolean" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testObjectArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testObjectBuild" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionHierarchy" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testSelfInstanceTwoVarsReflectionObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testAppendToStringUsingMultiLineStyle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testShortArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testBooleanArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testFloatArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testInt" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testByteArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionArrayCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionLongArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testBlank" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testFloat" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testShort" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionArrayArrayCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testByte" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testChar" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testLong" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionFloatArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testLongArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="test_setUpToClass_invalid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <error message="Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.reflect.InaccessibleObjectException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.reflect.InaccessibleObjectException>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.test_setUpToClass_invalid(ToStringBuilderTest.java:1025)
-]]></error>
-  </testcase>
-  <testcase name="test_setUpToClass_invalid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <failure message="Expected null, actual: {true=null, 5=null} expected null, but was:&lt;{true=null, 5=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null, 5=null} expected null, but was:<{true=null, 5=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testBoolean" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionDoubleArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {true=null} expected null, but was:&lt;{true=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {true=null} expected null, but was:<{true=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
+  <testcase name="testReflectionBoolean" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testObjectArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testObjectBuild" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionHierarchy" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testSelfInstanceTwoVarsReflectionObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testAppendToStringUsingMultiLineStyle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testShortArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testBooleanArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testFloatArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testInt" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testByteArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionArrayCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionLongArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testBlank" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testFloat" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testShort" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionArrayArrayCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testByte" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testChar" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testLong" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testReflectionFloatArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testLongArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="test_setUpToClass_invalid" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testBoolean" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionDoubleArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionBooleanArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testReflectionInteger" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <error message="Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @72ba8a5e" type="java.lang.reflect.InaccessibleObjectException">java.lang.reflect.InaccessibleObjectException: Unable to make field static final char[] java.lang.Integer.digits accessible: module java.base does not "opens java.lang" to unnamed module @72ba8a5e
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionInteger(ToStringBuilderTest.java:95)
-</error>
-  </testcase>
-  <testcase name="testReflectionInteger" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {5=null} expected null, but was:&lt;{5=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {5=null} expected null, but was:<{5=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
+  <testcase name="testReflectionInteger" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testBooleanArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testFloatArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionyteArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionDoubleArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionIntArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testSimpleReflectionStatics" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
-  <testcase name="testReflectionStatics" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testSimpleReflectionStatics" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionStatics" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
   <testcase name="testReflectionLongArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionhortArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testConstructorEx1" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
@@ -266,9 +106,9 @@
   <testcase name="testReflectionObjectArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionBooleanArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testLongArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testLongArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testSimpleReflectionObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testShortArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testShortArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
   <testcase name="testIntArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testInheritedReflectionStatics" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionByteArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
@@ -276,8 +116,8 @@
   <testcase name="testAppendToString" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionArrayAndObjectCycle" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testSetDefaultEx" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testReflectionCharArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
-  <testcase name="testIntArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionCharArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testIntArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
   <testcase name="testDouble" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testByteArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionShortArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
@@ -288,28 +128,8 @@
   <testcase name="testReflectionIntArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testReflectionCharArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
   <testcase name="testGetSetDefault" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testInnerClassReflection" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
-  <testcase name="testReflectionCharacter" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <error message="Unable to make field static final int java.lang.Character.ERROR accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @72ba8a5e" type="java.lang.reflect.InaccessibleObjectException">java.lang.reflect.InaccessibleObjectException: Unable to make field static final int java.lang.Character.ERROR accessible: module java.base does not "opens java.lang" to unnamed module @72ba8a5e
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.testReflectionCharacter(ToStringBuilderTest.java:104)
-</error>
-  </testcase>
-  <testcase name="testReflectionCharacter" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001">
-    <failure message="Expected null, actual: {A=null} expected null, but was:&lt;{A=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {A=null} expected null, but was:<{A=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testDoubleArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {A=null} expected null, but was:&lt;{A=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {A=null} expected null, but was:<{A=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
-  <testcase name="testReflectionFloatArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0">
-    <failure message="Expected null, actual: {A=null} expected null, but was:&lt;{A=null}&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Expected null, actual: {A=null} expected null, but was:<{A=null}>
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.validateNullToStringStyleRegistry(ToStringBuilderTest.java:609)
-	at org.apache.commons.lang3.builder.ToStringBuilderTest.after(ToStringBuilderTest.java:46)
-]]></failure>
-  </testcase>
+  <testcase name="testInnerClassReflection" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0.001"/>
+  <testcase name="testReflectionCharacter" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testDoubleArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
+  <testcase name="testReflectionFloatArrayArray" classname="org.apache.commons.lang3.builder.ToStringBuilderTest" time="0"/>
 </testsuite>
