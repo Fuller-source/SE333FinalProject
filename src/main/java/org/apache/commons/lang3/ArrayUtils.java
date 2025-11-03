@@ -16,7 +16,7 @@
  */
 package org.apache.commons.lang3;
 
-import java.lang.reflect.Array;
+import java.lang.reflect.Array; 
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.HashMap;
@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.apache.commons.lang3.mutable.MutableInt;
+import org.apache.commons.lang3.mutable.MutableInt; 
 
 /**
  * <p>Operations on arrays, primitive arrays (like {@code int[]}) and
