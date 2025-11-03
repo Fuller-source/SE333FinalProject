@@ -187,6 +187,8 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.28.0</version>
         <configuration>
+          <!-- avoid parsing project site descriptor by pointing PMD to a non-existing site directory under target -->
+          <siteDirectory>${project.build.directory}/pmd-site</siteDirectory>
           <format>xml</format>
           <targetDirectory>${project.build.directory}</targetDirectory>
           <failOnViolation>true</failOnViolation>
