@@ -188,10 +188,10 @@
         <version>3.28.0</version>
         <configuration>
           <rulesets>
-            <ruleset>/rulesets/java/basic.xml</ruleset>
-            <ruleset>/rulesets/java/unusedcode.xml</ruleset>
-            <ruleset>/rulesets/java/imports.xml</ruleset>
-            <ruleset>/rulesets/java/bestpractices.xml</ruleset>
+            <ruleset>rulesets/java/basic.xml</ruleset>
+            <ruleset>rulesets/java/unusedcode.xml</ruleset>
+            <ruleset>rulesets/java/imports.xml</ruleset>
+            <ruleset>rulesets/java/bestpractices.xml</ruleset>
           </rulesets>
           <format>xml</format>
           <targetDirectory>${project.build.directory}</targetDirectory>
