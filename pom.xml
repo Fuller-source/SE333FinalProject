@@ -182,6 +182,29 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.28.0</version>
+        <configuration>
+          <!-- avoid parsing project site descriptor by pointing PMD to a non-existing site directory under target -->
+          <siteDirectory>${project.build.directory}/pmd-site</siteDirectory>
+          <format>xml</format>
+          <targetDirectory>${project.build.directory}</targetDirectory>
+          <failOnViolation>true</failOnViolation>
+          <failurePriority>3</failurePriority>
+        </configuration>
+        <executions>
+          <execution>
+            <id>pmd-check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>pmd</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <reporting>
@@ -211,28 +234,12 @@
         </configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.0.1</version>
-        <configuration>
-          <targetJdk>${maven.compile.target}</targetJdk>
-        </configuration>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>pmd</report>
-              <report>cpd</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>taglist-maven-plugin</artifactId>
         <version>2.4</version>
         <configuration>
           <tags>
-            <tag>TODO</tag>
-            <tag>NOPMD</tag>
+
             <tag>NOTE</tag>
           </tags>
         </configuration>
