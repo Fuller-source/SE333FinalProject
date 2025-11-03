@@ -101,6 +101,7 @@
     <commons.site.path>lang</commons.site.path>
     <commons.scmPubUrl>https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-lang</commons.scmPubUrl>
     <commons.scmPubCheckoutDirectory>site-content</commons.scmPubCheckoutDirectory>
+    <argLine>--add-opens java.base/java.lang=ALL-UNNAMED -Duser.language=en -Duser.country=US</argLine>
   </properties>
   <build>
     <plugins>
@@ -114,7 +115,7 @@
           </includes>
           <runOrder>random</runOrder>
           <testFailureIgnore>true</testFailureIgnore>
-          <argLine>--add-opens java.base/java.lang=ALL-UNNAMED -Duser.language=en -Duser.country=US</argLine>
+          <argLine>${argLine}</argLine>
         </configuration>
       </plugin>
 
@@ -158,6 +159,12 @@
             <goals>
               <goal>prepare-agent</goal>
             </goals>
+            <configuration>
+              <includes>
+                <include>org/apache/commons/lang3/**</include>
+              </includes>
+              <propertyName>argLine</propertyName>
+            </configuration>
           </execution>
           <execution>
             <id>report</id>

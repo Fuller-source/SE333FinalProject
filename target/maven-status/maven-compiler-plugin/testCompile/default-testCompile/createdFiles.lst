@@ -116,6 +116,7 @@ org/apache/commons/lang3/exception/AbstractExceptionContextTest$ObjectWithFaulty
 org/apache/commons/lang3/concurrent/TimedSemaphoreTest.class
 org/apache/commons/lang3/builder/ToStringStyleTest$1.class
 org/apache/commons/lang3/event/EventListenerSupportTest$2$1.class
+org/apache/commons/lang3/time/DateUtilsFragmentTest.class
 org/apache/commons/lang3/text/StrBuilderTest.class
 org/apache/commons/lang3/builder/ToStringBuilderTest.class
 org/apache/commons/lang3/StringUtilsTest$1.class
