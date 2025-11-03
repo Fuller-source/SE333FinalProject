@@ -464,14 +464,22 @@ public class NumberUtils {
             }
         }
         if (pfxLen > 0) { // we have a hex number
-            final int hexDigits = str.length() - pfxLen;
-            if (hexDigits > 16) { // too many for Long
-                return createBigInteger(str);
+            // Extract the unsigned hex digits (prefix includes any leading '-' if present)
+            final String unsignedHex = str.substring(pfxLen);
+            // Use BigInteger to determine magnitude so we can return Integer, Long or BigInteger as appropriate
+            final BigInteger bi = new BigInteger(unsignedHex, 16);
+            // If original string starts with a negative prefix, ensure sign is applied
+            final boolean negative = str.startsWith("-");
+            if (bi.bitLength() <= 31) { // fits in signed int
+                final int intVal = bi.intValue();
+                return negative ? Integer.valueOf(-intVal) : Integer.valueOf(intVal);
             }
-            if (hexDigits > 8) { // too many for an int
-                return createLong(str);
+            if (bi.bitLength() <= 63) { // fits in signed long
+                final long longVal = bi.longValue();
+                return negative ? Long.valueOf(-longVal) : Long.valueOf(longVal);
             }
-            return createInteger(str);
+            final BigInteger full = negative ? bi.negate() : bi;
+            return full;
         }
         final char lastChar = str.charAt(str.length() - 1);
         String mant;

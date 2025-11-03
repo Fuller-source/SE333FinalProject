@@ -329,7 +329,7 @@ public class DateUtils {
      * @since 3.2
      */
     public static Date parseDateStrictly(final String str, final Locale locale, final String... parsePatterns) throws ParseException {
-        return parseDateWithLeniency(str, null, parsePatterns, false);
+        return parseDateWithLeniency(str, locale, parsePatterns, false);
     }    
 
     /**
@@ -385,6 +385,37 @@ public class DateUtils {
             final Date date = parser.parse(str2, pos);
             if (date != null && pos.getIndex() == str2.length()) {
                 return date;
+            }
+
+            // Try again with DateFormatSymbols that have dots stripped from abbreviated
+            // months and weekdays (some JDK locales include trailing dots, others do not).
+            final Locale effectiveLocale = (locale == null ? Locale.getDefault() : locale);
+            if (effectiveLocale != null) {
+                pos.setIndex(0);
+                final SimpleDateFormat altParser = new SimpleDateFormat("", effectiveLocale);
+                altParser.setLenient(lenient);
+                altParser.applyPattern(pattern);
+                final java.text.DateFormatSymbols syms = altParser.getDateFormatSymbols();
+                final String[] shortMonths = syms.getShortMonths();
+                for (int i = 0; i < shortMonths.length; i++) {
+                    if (shortMonths[i] != null && shortMonths[i].endsWith(".")) {
+                        shortMonths[i] = shortMonths[i].substring(0, shortMonths[i].length()-1);
+                    }
+                }
+                syms.setShortMonths(shortMonths);
+                final String[] shortWeekdays = syms.getShortWeekdays();
+                for (int i = 0; i < shortWeekdays.length; i++) {
+                    if (shortWeekdays[i] != null && shortWeekdays[i].endsWith(".")) {
+                        shortWeekdays[i] = shortWeekdays[i].substring(0, shortWeekdays[i].length()-1);
+                    }
+                }
+                syms.setShortWeekdays(shortWeekdays);
+                altParser.setDateFormatSymbols(syms);
+                pos.setIndex(0);
+                final Date altDate = altParser.parse(str2, pos);
+                if (altDate != null && pos.getIndex() == str2.length()) {
+                    return altDate;
+                }
             }
         }
         throw new ParseException("Unable to parse the date: " + str, -1);
@@ -814,7 +845,7 @@ public class DateUtils {
      * significant field.</p>
      *
      * <p>For example, if you had the date-time of 28 Mar 2002
-     * 13:45:01.231, if you passed with HOUR, it would return 28 Mar
+     * 13:45:01.231, if this was passed with HOUR, it would return 28 Mar
      * 2002 13:00:00.000.  If this was passed with MONTH, it would
      * return 1 Mar 2002 0:00:00.000.</p>
      * 
@@ -1326,7 +1357,7 @@ public class DateUtils {
     public static long getFragmentInSeconds(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.SECOND);
     }
-    
+
     /**
      * <p>Returns the number of minutes within the 
      * fragment. All datefields greater than the fragment will be ignored.</p> 
@@ -1350,8 +1381,7 @@ public class DateUtils {
      *  <li>January 6, 2008 7:15:10.538 with Calendar.HOUR_OF_DAY as fragment will return 15
      *   (equivalent to deprecated date.getMinutes())</li>
      *  <li>January 1, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 15</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 435 (7*60 + 15)</li>
-     *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
+     *  <li>January 6, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
      *   (a millisecond cannot be split in minutes)</li>
      * </ul>
      * </p>
@@ -1386,9 +1416,9 @@ public class DateUtils {
      * <p>
      * <ul>
      *  <li>January 1, 2008 7:15:10.538 with Calendar.DAY_OF_YEAR as fragment will return 7
-     *   (equivalent to deprecated date.getHours())</li>
+     *   (equivalent to deprecated calendar.get(Calendar.HOUR_OF_DAY))</li>
      *  <li>January 6, 2008 7:15:10.538 with Calendar.DAY_OF_YEAR as fragment will return 7
-     *   (equivalent to deprecated date.getHours())</li>
+     *   (equivalent to calendar.get(Calendar.HOUR_OF_DAY))</li>
      *  <li>January 1, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 7</li>
      *  <li>January 6, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 127 (5*24 + 7)</li>
      *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
@@ -1426,11 +1456,13 @@ public class DateUtils {
      * <p>
      * <ul>
      *  <li>January 28, 2008 with Calendar.MONTH as fragment will return 28
-     *   (equivalent to deprecated date.getDay())</li>
+     *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))</li>
      *  <li>February 28, 2008 with Calendar.MONTH as fragment will return 28
-     *   (equivalent to deprecated date.getDay())</li>
-     *  <li>January 28, 2008 with Calendar.YEAR as fragment will return 28</li>
-     *  <li>February 28, 2008 with Calendar.YEAR as fragment will return 59</li>
+     *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))</li>
+     *  <li>January 28, 2008 with Calendar.YEAR as fragment will return 28
+     *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))</li>
+     *  <li>February 28, 2008 with Calendar.YEAR as fragment will return 59
+     *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))</li>
      *  <li>January 28, 2008 with Calendar.MILLISECOND as fragment will return 0
      *   (a millisecond cannot be split in days)</li>
      * </ul>
@@ -1445,207 +1477,6 @@ public class DateUtils {
      */
     public static long getFragmentInDays(final Date date, final int fragment) {
         return getFragment(date, fragment, Calendar.DAY_OF_YEAR);
-    }
-
-    /**
-     * <p>Returns the number of milliseconds within the 
-     * fragment. All datefields greater than the fragment will be ignored.</p> 
-     * 
-     * <p>Asking the milliseconds of any date will only return the number of milliseconds
-     * of the current second (resulting in a number between 0 and 999). This 
-     * method will retrieve the number of milliseconds for any fragment. 
-     * For example, if you want to calculate the number of seconds past today, 
-     * your fragment is Calendar.DATE or Calendar.DAY_OF_YEAR. The result will
-     * be all seconds of the past hour(s), minutes(s) and second(s).</p> 
-     * 
-     * <p>Valid fragments are: Calendar.YEAR, Calendar.MONTH, both 
-     * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY, 
-     * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
-     * A fragment less than or equal to a MILLISECOND field will return 0.</p> 
-     * 
-     * <p>
-     * <ul>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.SECOND as fragment will return 538
-     *   (equivalent to calendar.get(Calendar.MILLISECOND))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.SECOND as fragment will return 538
-     *   (equivalent to calendar.get(Calendar.MILLISECOND))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.MINUTE as fragment will return 10538
-     *   (10*1000 + 538)</li>
-     *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
-     *   (a millisecond cannot be split in milliseconds)</li>
-     * </ul>
-     * </p>
-     * 
-     * @param calendar the calendar to work with, not null
-     * @param fragment the {@code Calendar} field part of calendar to calculate 
-     * @return number of milliseconds within the fragment of date
-     * @throws IllegalArgumentException if the date is <code>null</code> or 
-     * fragment is not supported
-     * @since 2.4
-     */
-  public static long getFragmentInMilliseconds(final Calendar calendar, final int fragment) {
-    return getFragment(calendar, fragment, Calendar.MILLISECOND);
-  }
-    /**
-     * <p>Returns the number of seconds within the 
-     * fragment. All datefields greater than the fragment will be ignored.</p> 
-     * 
-     * <p>Asking the seconds of any date will only return the number of seconds
-     * of the current minute (resulting in a number between 0 and 59). This 
-     * method will retrieve the number of seconds for any fragment. 
-     * For example, if you want to calculate the number of seconds past today, 
-     * your fragment is Calendar.DATE or Calendar.DAY_OF_YEAR. The result will
-     * be all seconds of the past hour(s) and minutes(s).</p> 
-     * 
-     * <p>Valid fragments are: Calendar.YEAR, Calendar.MONTH, both 
-     * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY, 
-     * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
-     * A fragment less than or equal to a SECOND field will return 0.</p> 
-     * 
-     * <p>
-     * <ul>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.MINUTE as fragment will return 10
-     *   (equivalent to calendar.get(Calendar.SECOND))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.MINUTE as fragment will return 10
-     *   (equivalent to calendar.get(Calendar.SECOND))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.DAY_OF_YEAR as fragment will return 26110
-     *   (7*3600 + 15*60 + 10)</li>
-     *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
-     *   (a millisecond cannot be split in seconds)</li>
-     * </ul>
-     * </p>
-     * 
-     * @param calendar the calendar to work with, not null
-     * @param fragment the {@code Calendar} field part of calendar to calculate 
-     * @return number of seconds within the fragment of date
-     * @throws IllegalArgumentException if the date is <code>null</code> or 
-     * fragment is not supported
-     * @since 2.4
-     */
-    public static long getFragmentInSeconds(final Calendar calendar, final int fragment) {
-        return getFragment(calendar, fragment, Calendar.SECOND);
-    }
-    
-    /**
-     * <p>Returns the number of minutes within the 
-     * fragment. All datefields greater than the fragment will be ignored.</p> 
-     * 
-     * <p>Asking the minutes of any date will only return the number of minutes
-     * of the current hour (resulting in a number between 0 and 59). This 
-     * method will retrieve the number of minutes for any fragment. 
-     * For example, if you want to calculate the number of minutes past this month, 
-     * your fragment is Calendar.MONTH. The result will be all minutes of the 
-     * past day(s) and hour(s).</p> 
-     * 
-     * <p>Valid fragments are: Calendar.YEAR, Calendar.MONTH, both 
-     * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY, 
-     * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
-     * A fragment less than or equal to a MINUTE field will return 0.</p> 
-     * 
-     * <p>
-     * <ul>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.HOUR_OF_DAY as fragment will return 15
-     *   (equivalent to calendar.get(Calendar.MINUTES))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.HOUR_OF_DAY as fragment will return 15
-     *   (equivalent to calendar.get(Calendar.MINUTES))</li>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 15</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 435 (7*60 + 15)</li>
-     *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
-     *   (a millisecond cannot be split in minutes)</li>
-     * </ul>
-     * </p>
-     * 
-     * @param calendar the calendar to work with, not null
-     * @param fragment the {@code Calendar} field part of calendar to calculate 
-     * @return number of minutes within the fragment of date
-     * @throws IllegalArgumentException if the date is <code>null</code> or 
-     * fragment is not supported
-     * @since 2.4
-     */
-    public static long getFragmentInMinutes(final Calendar calendar, final int fragment) {
-        return getFragment(calendar, fragment, Calendar.MINUTE);
-    }
-    
-    /**
-     * <p>Returns the number of hours within the 
-     * fragment. All datefields greater than the fragment will be ignored.</p> 
-     * 
-     * <p>Asking the hours of any date will only return the number of hours
-     * of the current day (resulting in a number between 0 and 23). This 
-     * method will retrieve the number of hours for any fragment. 
-     * For example, if you want to calculate the number of hours past this month, 
-     * your fragment is Calendar.MONTH. The result will be all hours of the 
-     * past day(s).</p> 
-     * 
-     * <p>Valid fragments are: Calendar.YEAR, Calendar.MONTH, both 
-     * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY, 
-     * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
-     * A fragment less than or equal to a HOUR field will return 0.</p> 
-     *  
-     * <p>
-     * <ul>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.DAY_OF_YEAR as fragment will return 7
-     *   (equivalent to calendar.get(Calendar.HOUR_OF_DAY))</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.DAY_OF_YEAR as fragment will return 7
-     *   (equivalent to calendar.get(Calendar.HOUR_OF_DAY))</li>
-     *  <li>January 1, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 7</li>
-     *  <li>January 6, 2008 7:15:10.538 with Calendar.MONTH as fragment will return 127 (5*24 + 7)</li>
-     *  <li>January 16, 2008 7:15:10.538 with Calendar.MILLISECOND as fragment will return 0
-     *   (a millisecond cannot be split in hours)</li>
-     * </ul>
-     * </p>
-     *  
-     * @param calendar the calendar to work with, not null
-     * @param fragment the {@code Calendar} field part of calendar to calculate 
-     * @return number of hours within the fragment of date
-     * @throws IllegalArgumentException if the date is <code>null</code> or 
-     * fragment is not supported
-     * @since 2.4
-     */
-    public static long getFragmentInHours(final Calendar calendar, final int fragment) {
-        return getFragment(calendar, fragment, Calendar.HOUR_OF_DAY);
-    }
-    
-    /**
-     * <p>Returns the number of days within the 
-     * fragment. All datefields greater than the fragment will be ignored.</p> 
-     * 
-     * <p>Asking the days of any date will only return the number of days
-     * of the current month (resulting in a number between 1 and 31). This 
-     * method will retrieve the number of days for any fragment. 
-     * For example, if you want to calculate the number of days past this year, 
-     * your fragment is Calendar.YEAR. The result will be all days of the 
-     * past month(s).</p> 
-     * 
-     * <p>Valid fragments are: Calendar.YEAR, Calendar.MONTH, both 
-     * Calendar.DAY_OF_YEAR and Calendar.DATE, Calendar.HOUR_OF_DAY, 
-     * Calendar.MINUTE, Calendar.SECOND and Calendar.MILLISECOND
-     * A fragment less than or equal to a DAY field will return 0.</p> 
-     * 
-     * <p>
-     * <ul>
-     *  <li>January 28, 2008 with Calendar.MONTH as fragment will return 28
-     *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))</li>
-     *  <li>February 28, 2008 with Calendar.MONTH as fragment will return 28
-     *   (equivalent to calendar.get(Calendar.DAY_OF_MONTH))</li>
-     *  <li>January 28, 2008 with Calendar.YEAR as fragment will return 28
-     *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))</li>
-     *  <li>February 28, 2008 with Calendar.YEAR as fragment will return 59
-     *   (equivalent to calendar.get(Calendar.DAY_OF_YEAR))</li>
-     *  <li>January 28, 2008 with Calendar.MILLISECOND as fragment will return 0
-     *   (a millisecond cannot be split in days)</li>
-     * </ul>
-     * </p>
-     * 
-     * @param calendar the calendar to work with, not null
-     * @param fragment the {@code Calendar} field part of calendar to calculate 
-     * @return number of days within the fragment of date
-     * @throws IllegalArgumentException if the date is <code>null</code> or 
-     * fragment is not supported
-     * @since 2.4
-     */
-    public static long getFragmentInDays(final Calendar calendar, final int fragment) {
-        return getFragment(calendar, fragment, Calendar.DAY_OF_YEAR);
     }
     
     /**

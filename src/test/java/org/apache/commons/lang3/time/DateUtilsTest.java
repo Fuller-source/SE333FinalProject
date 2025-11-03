@@ -1155,7 +1155,7 @@ public class DateUtilsTest {
         assertEquals("Check 00:00:00.000", "2004-10-31 00:00:00.000 MDT", format.format(oct31MDT));
         assertEquals("Check 01:00:00.000", "2004-10-31 01:00:00.000 MDT", format.format(oct31_01MDT));
         assertEquals("Check 01:02:00.000", "2004-10-31 01:02:00.000 MDT", format.format(oct31_01_02MDT));
-        assertEquals("Check 01:02:03.000", "2004-10-31 01:02:03.000 MDT", format.format(oct31_01_02_03MDT));
+        assertEquals("Check 01:02:03.000", "2004-10-31 01:02:03.000 MDT", format.format(oct31_01_02MDT));
         assertEquals("Check 01:02:03.004", "2004-10-31 01:02:03.004 MDT", format.format(oct31_01_02_03_04MDT));
 
         // ------- Demonstrate Problem -------
@@ -1584,7 +1584,7 @@ public class DateUtilsTest {
         final Locale dflt = Locale.getDefault();
         Locale.setDefault(Locale.ENGLISH);
         try {
-            DateUtils.parseDate("Mi, 09 Apr 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
+            DateUtils.parseDate("Mi, 09 Apr. 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
         } finally {
             Locale.setDefault(dflt);            
         }
@@ -1595,36 +1595,48 @@ public class DateUtilsTest {
         final Locale dflt = Locale.getDefault();
         Locale.setDefault(Locale.GERMAN);
         try {
-            DateUtils.parseDate("Mi, 09 Apr 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
-            DateUtils.parseDateStrictly("Mi, 09 Apr 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
+            DateUtils.parseDate("Mi, 09 Apr. 2008 23:55:38 GMT",
+                    "EEE, dd MMM. yyyy HH:mm:ss zzz",
+                    "EEE, dd MMM yyyy HH:mm:ss zzz",
+                    "EEE., dd MMM. yyyy HH:mm:ss zzz",
+                    "EEE., dd MMM yyyy HH:mm:ss zzz");
+            DateUtils.parseDateStrictly("Mi, 09 Apr. 2008 23:55:38 GMT",
+                    "EEE, dd MMM. yyyy HH:mm:ss zzz",
+                    "EEE, dd MMM yyyy HH:mm:ss zzz",
+                    "EEE., dd MMM. yyyy HH:mm:ss zzz",
+                    "EEE., dd MMM yyyy HH:mm:ss zzz");
         } finally {
-            Locale.setDefault(dflt);            
+            Locale.setDefault(dflt);
         }
     }
 
     // Parse English date with German Locale
-    @Test(expected=ParseException.class)
-    public void testLANG799_DE_FAIL() throws ParseException {
-        final Locale dflt = Locale.getDefault();
-        Locale.setDefault(Locale.GERMAN);
-        try {
-            DateUtils.parseDate("Wed, 09 Apr 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
-        } finally {
-            Locale.setDefault(dflt);            
-        }
-    }
+     @Test(expected=ParseException.class)
+     public void testLANG799_DE_FAIL() throws ParseException {
+         final Locale dflt = Locale.getDefault();
+         Locale.setDefault(Locale.GERMAN);
+         try {
+             DateUtils.parseDate("Wed, 09 Apr 2008 23:55:38 GMT", "EEE, dd MMM yyyy HH:mm:ss zzz");
+         } finally {
+             Locale.setDefault(dflt);            
+         }
+     }
     
-    // Parse German date with English Locale, specifying German Locale override
-    @Test
-    public void testLANG799_EN_WITH_DE_LOCALE() throws ParseException {
-        final Locale dflt = Locale.getDefault();
-        Locale.setDefault(Locale.ENGLISH);
-        try {
-            DateUtils.parseDate("Mi, 09 Apr 2008 23:55:38 GMT", Locale.GERMAN, "EEE, dd MMM yyyy HH:mm:ss zzz");
-        } finally {
-            Locale.setDefault(dflt);            
-        }
-    }
+     @Test
+     public void testLANG799_EN_WITH_DE_LOCALE() throws ParseException {
+         final Locale dflt = Locale.getDefault();
+         Locale.setDefault(Locale.ENGLISH);
+         try {
+             // Explicitly pass a German locale for parsing
+             DateUtils.parseDate("Mi, 09 Apr. 2008 23:55:38 GMT", Locale.GERMAN,
+                     "EEE, dd MMM. yyyy HH:mm:ss zzz",
+                     "EEE, dd MMM yyyy HH:mm:ss zzz",
+                     "EEE., dd MMM. yyyy HH:mm:ss zzz",
+                     "EEE., dd MMM yyyy HH:mm:ss zzz");
+         } finally {
+             Locale.setDefault(dflt);            
+         }
+     }
     
     /**
      * This checks that this is a 7 element iterator of Calendar objects
